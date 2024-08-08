@@ -78,16 +78,7 @@
           // 기본 동작(폼 제출) 방지
 
           if (value_check() == 0) {
-            const passwordValue = $("#password").val();
-            const passwordCheckValue = $("#password_check").val();
-            if (passwordValue === passwordCheckValue) {
-              value_print();
-            } else {
-              $("#Rpassword_check").remove();
-              $("<p> 비밀번호가 일치하지 않습니다. </p>")
-                .attr("id", "Rpassword_check")
-                .insertAfter("#password_check");
-            }
+            value_print();
           }
           event.preventDefault();
         });
@@ -102,7 +93,7 @@
         <input type="text" id="name" name="name" />
 
         <label for="email">이메일</label>
-        <input type="email" id="email" name="email" />
+        <input type="email" id="email" name="email" required />
 
         <label for="password">비밀번호</label>
         <input type="password" name="password" id="password" />
@@ -124,6 +115,8 @@
           <input type="radio" name="gender" value="기타" />
           기타
         </label>
+
+        <input type="checkbox" name="" id="" />
 
         <input type="submit" value="회원가입" id="submit" />
       </form>
