@@ -72,3 +72,9 @@ let value_print = () => {
       .insertAfter("#password_check");
   }
 };
+
+let alertTerms = () => {
+  if (!$("#terms").is(":checked")) {
+    alert("약관에 동의하십시오.");
+  }
+};

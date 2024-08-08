@@ -109,6 +109,7 @@
           if (value_check() == 0) {
             value_print();
           }
+          alertTerms();
           event.preventDefault();
         });
       });
@@ -131,7 +132,7 @@
           <label for="password">비밀번호 확인</label>
           <input type="password" name="password_check" id="password_check" />
         </div>
-        <div id="gender_value">
+        <div id="gender_check">
           <label>
             <input type="radio" name="gender" value="남성" />
             남성
@@ -147,7 +148,7 @@
             기타
           </label>
         </div>
-        <div id="terms">
+        <div id="terms_check">
           <input type="checkbox" name="terms" id="terms" />
           <label for="terms">약관에 동의합니다.</label>
           <p id="tooltip">
