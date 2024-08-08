@@ -45,7 +45,7 @@ let value_check = () => {
     $("#Rgender_check").remove();
     $("<p> 성별을 선택해 주세요. </p>")
       .attr("id", "Rgender_check")
-      .insertBefore("#submit");
+      .insertBefore("#terms");
     num++;
   } else {
     $("#Rgender_check").remove();

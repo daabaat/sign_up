@@ -35,7 +35,7 @@
         margin-top: 0;
         text-align: center;
       }
-      .signup-form form {
+      .signup-form .check {
         display: flex;
         flex-direction: column;
       }
@@ -50,6 +50,9 @@
         margin-top: 10px;
         border: 1px solid #ccc;
         border-radius: 4px;
+      }
+      .signup-form input[type="radio"] {
+        flex-direction: row;
       }
       .signup-form input[type="submit"] {
         background-color: #28a745;
@@ -70,6 +73,32 @@
         font-size: 15px;
         color: red;
       }
+      #terms {
+        position: relative;
+        display: inline-block;
+      }
+
+      #tooltip {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 5px;
+        background: #f1f1f1;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        width: 200px;
+      }
+
+      #terms:hover #tooltip {
+        display: block;
+      }
+
+      #tooltip p {
+        margin: 0;
+      }
     </style>
     <script src="script.js"></script>
     <script>
@@ -89,36 +118,46 @@
     <div class="signup-form">
       <h2>회원가입</h2>
       <form id="registerForm">
-        <label for="name">사용자 이름</label>
-        <input type="text" id="name" name="name" />
+        <div class="check">
+          <label for="name">사용자 이름</label>
+          <input type="text" id="name" name="name" />
 
-        <label for="email">이메일</label>
-        <input type="email" id="email" name="email" required />
+          <label for="email">이메일</label>
+          <input type="email" id="email" name="email" required />
 
-        <label for="password">비밀번호</label>
-        <input type="password" name="password" id="password" />
+          <label for="password">비밀번호</label>
+          <input type="password" name="password" id="password" />
 
-        <label for="password">비밀번호 확인</label>
-        <input type="password" name="password_check" id="password_check" />
+          <label for="password">비밀번호 확인</label>
+          <input type="password" name="password_check" id="password_check" />
+        </div>
+        <div id="gender_value">
+          <label>
+            <input type="radio" name="gender" value="남성" />
+            남성
+          </label>
 
-        <label>
-          <input type="radio" name="gender" value="남성" />
-          남성
-        </label>
+          <label>
+            <input type="radio" name="gender" value="여성" />
+            여성
+          </label>
 
-        <label>
-          <input type="radio" name="gender" value="여성" />
-          여성
-        </label>
-
-        <label>
-          <input type="radio" name="gender" value="기타" />
-          기타
-        </label>
-
-        <input type="checkbox" name="" id="" />
-
-        <input type="submit" value="회원가입" id="submit" />
+          <label>
+            <input type="radio" name="gender" value="기타" />
+            기타
+          </label>
+        </div>
+        <div id="terms">
+          <input type="checkbox" name="terms" id="terms" />
+          <label for="terms">약관에 동의합니다.</label>
+          <p id="tooltip">
+            여기에 약관 내용이 들어갑니다. 예를 들어, 개인정보 보호 정책, 서비스
+            이용 약관 등이 포함될 수 있습니다.
+          </p>
+        </div>
+        <div class="check">
+          <input type="submit" value="회원가입" id="submit" />
+        </div>
       </form>
       <h3>회원가입 정보 확인</h3>
       <div id="submit_value">
